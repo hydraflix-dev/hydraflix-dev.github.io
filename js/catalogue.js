@@ -15,7 +15,7 @@ $(function () {
 	var hash, imdb, magnet, title, rating, poster, genre, background;	
 	// DATASET
 
-	var proxy = "http://alloworigin.com/get?url="; // "http://crossorigin.me/";
+	var proxy = "http://www.whateverorigin.org/get?url="; // "http://alloworigin.com/get?url="; // "http://crossorigin.me/";
 	console.log("proxy"+proxy);
 	var protocol = "https://";	
 	var provider = "ytsis";
@@ -112,7 +112,7 @@ $(function () {
 
 		var page = page_key+page_value;
 
-		var api_url = protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
+		var api_url = proxy+protocol+endpoint+page+parameters;
 
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
@@ -133,7 +133,7 @@ $(function () {
 			switch (provider) {
 				case "torrentsapi": 		json_data = data.MovieList; 	break;
 				case "ytsag": 				json_data = data.data.movies; 	break;
-				case "ytsis": 				json_data = data.data.movies; 	break;
+				case "ytsis": 				json_data = data.contents.data.movies; 	break;
 				case "ytsli": 				json_data = data.data.movies; 	break;
 				case "eztv_popcorntimews": 	json_data = data; 				break;
 				case "haruhichan": 			json_data = data; 				break;
