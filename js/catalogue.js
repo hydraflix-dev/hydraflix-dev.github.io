@@ -126,11 +126,11 @@ $(function () {
 			// GET STATUS DATA
 
 			i = 0;
-			console.log("DATA: "+data.contents);
+			console.log("DATA torrentsapi: "+data.contents);
 			// JSON DATA
 			
 			switch (provider) {
-				case "torrentsapi": 		json_data = data.MovieList; 	break;
+				case "torrentsapi": 		json_data = data.contents.MovieList; 	break;
 				case "ytsag": 				json_data = data.data.movies; 	break;
 				case "ytsis": 				json_data = data.data.movies; 	break;
 				case "ytsli": 				json_data = data.data.movies; 	break;
