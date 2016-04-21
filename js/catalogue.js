@@ -97,7 +97,7 @@ $(function () {
 		switch (provider) {
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
-			case "ytsis": 				protocol = "http://"; endpoint = "yify.is/index.php/api/v2/list_movies.json%3F";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "ytsis": 				protocol = "http://"; endpoint = "yify.is/index.php/api/v2/list_movies.json"; /* %3F / ? */	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsli": 				protocol = "https://"; endpoint = "yts.li/api/v2/list_movies.json?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // NO CORS LOCAL!
 			case "eztv_popcorntimews": 	protocol = "https://"; endpoint = "popcorntime.ws/api/eztv/shows/";				type_value = "";	page_key = "";			parameters = ""; 				 break;
 			case "haruhichan": 			protocol = "http://";  endpoint = "ptp.haruhichan.com/list.php?";				type_value = "all";	page_key = "page=";		parameters = type; 			  	 break;
@@ -112,7 +112,7 @@ $(function () {
 
 		var page = page_key+page_value;
 
-		var api_url = proxy+protocol+endpoint+page+parameters;
+		var api_url = proxy+protocol+endpoint+page; //+parameters;
 
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
