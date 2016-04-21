@@ -18,7 +18,7 @@ $(function () {
 	var proxy = "http://alloworigin.com/get?url="; // "http://crossorigin.me/";
 	console.log("proxy"+proxy);
 	var protocol = "https://";	
-	var provider = "ytsag";
+	var provider = "ytsis";
 
 	$("#movies_navbar").click(function() {
   		provider = "ytsag";
@@ -127,13 +127,13 @@ $(function () {
 
 			i = 0;
 			console.log("api_url: "+api_url)
-			//console.log("DATA O1:52: "+data.contents.data);
+			console.log("DATA O1:56: "+data.contents.data.movies);
 			// JSON DATA
 			
 			switch (provider) {
-				case "torrentsapi": 		json_data = data.contents.data.movies; 	break;
+				case "torrentsapi": 		json_data = data.MovieList; 	break;
 				case "ytsag": 				json_data = data.data.movies; 	break;
-				case "ytsis": 				json_data = data.data.movies; 	break;
+				case "ytsis": 				json_data = data.contents.data.movies; 	break;
 				case "ytsli": 				json_data = data.data.movies; 	break;
 				case "eztv_popcorntimews": 	json_data = data; 				break;
 				case "haruhichan": 			json_data = data; 				break;
