@@ -126,7 +126,7 @@ $(function () {
 			// GET STATUS DATA
 
 			i = 0;
-			console.log("DATA torrentsapi: "+data.contents);
+			console.log("DATA O1:50: "+data.contents.data);
 			// JSON DATA
 			
 			switch (provider) {
