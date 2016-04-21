@@ -66,19 +66,19 @@ $(function () {
 
 	var page_key;
 
-	var sort_key = "&sort_by=";
+	var sort_key = "%26sort_by%3D";
 	var sort_value = "seeds";
 	var sort = sort_key+sort_value;
 	
-	var quality_key ="&quality=";
+	var quality_key ="%26quality%3D";
 	var quality_value ="720p";
 	var quality = quality_key+quality_value;
 
-	var limit_items_key = "&limit=";
+	var limit_items_key = "%26limit%3D";
 	var limit_items_value = 24; // 12, 24, 48 (bootstrap friendly query must be divisible for 1, 2, 3 and 4)
 	var limit = limit_items_key+limit_items_value;
 
-	var type_key = "&type=";
+	var type_key = "%26type%3D";
 	var type_value = "movie";
 	var type = type_key+type_value;
 
@@ -97,7 +97,7 @@ $(function () {
 		switch (provider) {
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
-			case "ytsis": 				protocol = "http://"; endpoint = "yify.is/index.php/api/v2/list_movies.json?";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "ytsis": 				protocol = "http://"; endpoint = "yify.is/index.php/api/v2/list_movies.json%3F";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsli": 				protocol = "https://"; endpoint = "yts.li/api/v2/list_movies.json?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // NO CORS LOCAL!
 			case "eztv_popcorntimews": 	protocol = "https://"; endpoint = "popcorntime.ws/api/eztv/shows/";				type_value = "";	page_key = "";			parameters = ""; 				 break;
 			case "haruhichan": 			protocol = "http://";  endpoint = "ptp.haruhichan.com/list.php?";				type_value = "all";	page_key = "page=";		parameters = type; 			  	 break;
