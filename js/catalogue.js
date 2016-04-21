@@ -15,7 +15,7 @@ $(function () {
 	var hash, imdb, magnet, title, rating, poster, genre, background;	
 	// DATASET
 
-	var proxy = "http://crossorigin.me/";
+	var proxy = "http://alloworigin.com/get?url="; // "http://crossorigin.me/";
 	var protocol = "https://";	
 	var provider = "ytsag";
 
