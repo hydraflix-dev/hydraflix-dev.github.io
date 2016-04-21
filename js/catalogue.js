@@ -17,7 +17,7 @@ $(function () {
 
 	var proxy = "http://www.whateverorigin.org/get?url="; // "http://alloworigin.com/get?url="; // "http://crossorigin.me/";
 	console.log("proxy"+proxy);
-	var protocol = "https://";	
+	var protocol = "http://";	
 	var provider = "ytsis";
 
 	$("#movies_navbar").click(function() {
