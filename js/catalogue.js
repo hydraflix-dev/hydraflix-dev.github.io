@@ -16,6 +16,7 @@ $(function () {
 	// DATASET
 
 	var proxy = "http://alloworigin.com/get?url="; // "http://crossorigin.me/";
+	console.log("proxy"+proxy);
 	var protocol = "https://";	
 	var provider = "ytsag";
 
