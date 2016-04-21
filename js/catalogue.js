@@ -126,7 +126,8 @@ $(function () {
 			// GET STATUS DATA
 
 			i = 0;
-			console.log("DATA O1:50: "+data.contents.data);
+			console.log("api_url: "+api_url)
+			//console.log("DATA O1:52: "+data.contents.data);
 			// JSON DATA
 			
 			switch (provider) {
