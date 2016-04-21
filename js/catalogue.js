@@ -126,7 +126,7 @@ $(function () {
 			// GET STATUS DATA
 
 			i = 0;
-			console.log("DATA: "+data);
+			console.log("DATA: "+data.contents);
 			// JSON DATA
 			
 			switch (provider) {
