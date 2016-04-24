@@ -33,7 +33,7 @@ function onPlayerStateChange(e) {
 
 function vidRescale(){
 
-  var w = $(window).width()+200,
+  var w = $(window).width()/2,
     h = $(window).height()+200;
 
   if (w/h > 16/9){
