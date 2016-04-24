@@ -33,8 +33,8 @@ function onPlayerStateChange(e) {
 
 function vidRescale(){
 
-  var w = $(window).width()/2,
-    h = $(window).height()+200;
+  var w = $(window).width(),
+    h = $(window).height()*0.75;
 
   if (w/h > 16/9){
     tv.setSize(w, w/16*9);
