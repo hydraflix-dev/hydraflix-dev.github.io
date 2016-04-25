@@ -1,3 +1,13 @@
-.morphext > .animated {
-    display: inline-block;
+p#sentence{
+  text-align:center;
+}
+
+#swap{
+  height:3em;
+  width:0;
+  vertical-align:top;
+}
+#swap>span{
+  position:absolute;
+  color:chocolate;
 }
