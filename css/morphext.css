@@ -7,7 +7,7 @@ p#sentence
 }
 */
 #swap {
-  height: 3em;
+  /*height: 3em;*/
   width: 0;
   vertical-align: top;
 }
