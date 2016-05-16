@@ -510,6 +510,15 @@ img.chrome {
 	width: 206px;
     margin: 0 auto;
 }
+#steps {
+	top: 85%;
+    position: relative;
+    color: #ffffff;
+    font-family: avalon;
+    font-size: 14px;
+    line-height: 14px;    
+    text-align: center;
+}
 
 @media (max-width: 768px) {
 	#playflix-isologotipo {
