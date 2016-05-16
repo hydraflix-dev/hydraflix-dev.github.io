@@ -506,9 +506,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 .steps {
 	font-size: 14px;
 }
+.steps > a, a:hover, a:visited {
+	color: #013BA6!important;
+	text-decoration: none;
+}
 img.chrome {
 	width: 206px;
     margin: 0 auto;
+    margin-top: 14px;
 }
 #steps {
 	top: 85%;
