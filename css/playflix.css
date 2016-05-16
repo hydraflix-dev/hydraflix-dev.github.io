@@ -506,7 +506,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 .steps {
 	font-size: 14px;
 }
-.steps > a, a:hover, a:visited {
+.steps > a, .steps > a:hover, .steps > a:visited {
 	color: #013BA6!important;
 	text-decoration: none;
 }
