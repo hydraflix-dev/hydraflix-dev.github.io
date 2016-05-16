@@ -503,6 +503,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 }
 
+.steps {
+	font-size: 14px;
+}
+img.chrome {
+	width: 206px;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
 	#playflix-isologotipo {
 		display: none;
