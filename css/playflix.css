@@ -527,10 +527,10 @@ img.chrome {
 	top: 85%;
     position: relative;
     color: #ffffff;
-    font-family: avalon;
     font-size: 14px;
     line-height: 14px;    
     text-align: center;
+    padding: 0px 150px;    
 }
 
 @media (max-width: 768px) {
