@@ -532,6 +532,10 @@ img.chrome {
     text-align: center;
     padding: 0px 150px;    
 }
+.fa-refresh	{
+	font-size: 62px!important;
+	margin-top: 20px;
+}
 
 @media (max-width: 768px) {
 	#playflix-isologotipo {
