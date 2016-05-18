@@ -177,16 +177,4 @@ $(function () {
 			//$('#movies').append(html);
 		});	
 	}; //Eof loadMore()		
-	// Pagination | Infinite Scrolling
-	/*
-	$(document).ready(function() {
-		loadMore();
-	});
-	*/
-	$(window).scroll(function() {
-		if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-		loadMore();
-		}
-	});
-	// Pagination | Infinite Scrolling
 });
