@@ -29,8 +29,6 @@ $(function () {
   		closeThis_detalle();
   		unscrollDetails();
 	});	
-
-	/*
 	$("#tvshow_navbar").click(function() {
   		provider = "eztv_popcorntimews";
   		$("#movies").html("");
@@ -61,7 +59,7 @@ $(function () {
   		closeThis_detalle();
   		unscrollDetails();  		
 	});	
-	*/
+
 
 
 
@@ -89,14 +87,12 @@ $(function () {
 		page_value = localStorage.getItem("pagina");
 		page_value = parseInt(page_value);
 		page_value = page_value+1;
-		console.log(page_value);
 		var pageToSave = JSON.stringify(page_value)
-		console.log(pageToSave);
 		localStorage.setItem("pagina", pageToSave);			
 		// Pagination | Infinite Scrolling
 
 		
-		console.log(provider);
+
 		switch (provider) {
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
@@ -114,10 +110,8 @@ $(function () {
 		}	
 
 		var page = page_key+page_value;
-		console.log(page);
 
-		var api_url = protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
-		console.log(api_url);
+		var api_url = proxy+protocol+endpoint+page+parameters;
 
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
@@ -149,10 +143,9 @@ $(function () {
 				case "butter": 				json_data = data.downloads; 	break;
 				case "torrentsapishows": 	json_data = data.MovieList; 	break;
 			}			
-			console.log(json_data);
+	
 			// JSON DATA
 			$.each(json_data, function (i, item) {
-
 				switch (provider) {
 					case "torrentsapi": 		hash = item.items[0].id; 		imdb = item.imdb; 		magnet = item.items[0].torrent_magnet; 										title = item.title; 			rating = item.rating; 		poster = item.poster_med; 			genre = item.genres[0]; background = item.poster_big; 			content_value = ""; break;
 					case "ytsag": 				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.background_image; 	content_value = item.id; break;
@@ -177,4 +170,14 @@ $(function () {
 			//$('#movies').append(html);
 		});	
 	}; //Eof loadMore()		
+	// Pagination | Infinite Scrolling		
+	$(window).scroll(function() {
+		if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+		loadMore();
+		}
+	});
+	$(document).ready(function() {
+		loadMore();
+	});
+	// Pagination | Infinite Scrolling
 });
