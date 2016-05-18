@@ -178,13 +178,13 @@ $(function () {
 		});	
 	}; //Eof loadMore()		
 	// Pagination | Infinite Scrolling		
+	$(document).ready(function() {
+		loadMore();
+	});
 	$(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
 		loadMore();
 		}
-	});
-	$(document).ready(function() {
-		loadMore();
 	});
 	// Pagination | Infinite Scrolling
 });
