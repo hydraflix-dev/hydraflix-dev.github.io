@@ -158,7 +158,7 @@
 		<script type="text/javascript" src="js/functions.js"></script>
 		<script type="text/javascript" src="js/instructions.js"></script>
 		<script type="text/javascript" src="js/search.js"></script>
-	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="js/material/ripples.min.js"></script>
 		<script src="js/material/material.min.js"></script>
 		<script>
@@ -194,6 +194,18 @@
 			  }()); 
 			
 			});
+		</script>
+		<script type="text/javascript">
+			// Pagination | Infinite Scrolling
+			$(document).ready(function() {
+				loadMore();
+			});
+			$(window).scroll(function() {
+				if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+				loadMore();
+				}
+			});
+			// Pagination | Infinite Scrolling			
 		</script>
 		<!--/JS-->		
 	</body>
