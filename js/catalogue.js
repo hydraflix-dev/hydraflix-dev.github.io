@@ -112,6 +112,7 @@ $(function () {
 		var page = page_key+page_value;
 
 		var api_url = proxy+protocol+endpoint+page+parameters;
+		console.log(api_url);
 
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
