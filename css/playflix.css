@@ -524,13 +524,20 @@ img.chrome {
     margin-top: 14px;
 }
 #steps {
-	top: 85%;
+	top: 80%;
     position: relative;
     color: #ffffff;
     font-size: 14px;
     line-height: 14px;    
     text-align: center;
     padding: 0px 150px;    
+}
+#playflix_slogan_steps {
+    color: #ffffff;
+    font-family: avalon;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
 }
 .fa-refresh, .fa-smile-o {
 	font-size: 62px!important;
