@@ -532,6 +532,9 @@ img.chrome {
     text-align: center;
     padding: 0px 150px;    
 }
+.steps-b-r {
+	border-right: 1px #fff solid;
+}
 #playflix_slogan_steps {
     color: #ffffff;
     font-family: avalon;
