@@ -533,15 +533,26 @@ img.chrome {
     padding: 0px 150px;    
 }
 .steps-b-r {
-	border-right: 1px #fff solid;
+	border-right: 1px rgba(255, 255, 255, 0.25) solid;
 }
 #playflix_slogan_steps {
+	position: relative;
+	top: -60px;
+}
+#playflix_slogan_steps > span {
     color: #ffffff;
     font-family: avalon;
     font-size: 20px;
     line-height: 20px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    border: 2px #013BA6 solid;
+    padding: 15px;
+}
+#steps_reload-img {
+	margin-top: 15px;
+}
+#steps_enjoy-img {
+	margin-top: 10px;	
 }
 .fa-refresh, .fa-smile-o {
 	font-size: 62px!important;
