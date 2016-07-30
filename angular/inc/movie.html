@@ -1,8 +1,6 @@
-<script type="text/ng-template" id="movie.html">
 	<div id="movie-box-'+'" class="movie-box movie-box-'{genre}' col-lg-2 col-md-3 col-sm-6 col-xs-12 plfx-aux-1">
 	<div class="plfx-aux-2" style="background-image:url({background});"></div>
 	<a href="{magnet}">
 	<img id="img-movie-box-{hash}" class="hover-luz plfx-aux-3" title="{title}" alt="{title}" src="{poster}" onmouseover="hoverHash(&#39;{imdb}&#39;)" onmouseout="outHash(&#39;{imdb}&#39;)" onclick="f_play_detalle(&#39;{hash}&#39;,&#39;{imdb}&#39;,&#39;{magnet}&#39;,&#39;{title}&#39;,&#39;{rating}&#39;,&#39;{poster}&#39;,&#39;{genre}&#39;,&#39;{background}&#39;,&#39;{api_url}&#39;,&#39;{provider}&#39;,&#39;{proxy}&#39;,&#39;{content_value}&#39;); scrollDetails(&#39;{hash}&#39;);"/>
 	<div id="movie-rating-star-{imdb}" class="movie_rating_star"></div></div>
 	</a>
-</script>
