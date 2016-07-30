@@ -17,4 +17,4 @@
 			    $span.stop().fadeOut().eq(c).fadeIn().delay(1000).show(0, loop);
 			  }()); 
 			
-			});
+			});	
