@@ -1,5 +1,7 @@
 var playflix = angular.module('playflix',[]);
 
+
+/*
 playflix.controller('navbarController', ['$scope', function ($scope) {
     $scope.navbars = [{
         name: 'navbar.html',
@@ -7,7 +9,6 @@ playflix.controller('navbarController', ['$scope', function ($scope) {
         
     $scope.navbar = $scope.navbars[0];
 }]);
-/*
 playflix.controller('headController', ['$scope', function ($scope) {
     $scope.heads = [{
         name: 'head.html',
