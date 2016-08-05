@@ -3,9 +3,9 @@ angular.module('myAppServices', ['ngResource']).
 
     factory('BreakinBadChar', function($resource){
 
-  return $resource(resourceName, {}, {
+  return $resource(yify, {}, {
 
-    query: {method:'GET', params:{resourceName:yify}, isArray: true}
+    query: {method:'GET', isArray: true}
 
   });
 
