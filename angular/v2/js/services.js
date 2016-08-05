@@ -1,4 +1,4 @@
-var yify = "http://crossorigin.me/https://yts.ag/api/v2/list_movies.json"
+var yify = "http://yify.is/index.php/api/v2/list_movies.json"
 angular.module('myAppServices', ['ngResource']).
 
     factory('BreakinBadChar', function($resource){
