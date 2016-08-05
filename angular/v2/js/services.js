@@ -1,5 +1,5 @@
-
-angular.module('myApp').controller('myController', function InstantSearchController($scope, $http) {
+angular.module('myApp', ['myAppServices']);
+myAppServices.controller('myController', function InstantSearchController($scope, $http) {
 	$scope.search = function() {   
 	$http.jsonp("http://yify.is/index.php/api/v2/list_movies.json").success(
             function(data, status) {
