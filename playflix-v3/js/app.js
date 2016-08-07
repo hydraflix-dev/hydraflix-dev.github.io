@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['infinite-scroll'])
     '$compileProvider',
     function( $compileProvider )
     {   
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|magnet):/);
         // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     }
 ]);
