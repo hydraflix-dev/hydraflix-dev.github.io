@@ -1,0 +1,77 @@
+<div class="col-lg-12">
+    <div class="panel panel-default" style="background-image: url('{{detailCtrl.movie.background_image}}')">
+        <div class="panel-heading">{{ 'movie_detail' | translate }}</div>
+        <div class="panel-body movie-details">
+            <div class="row">
+                <div class="col-lg-6 text-centered">
+                    <h1 class="movie-title">{{detailCtrl.movie.title_long}}</h1>
+                </div>
+                <div class="col-lg-6 text-right download-options">
+                    <div class="btn-group" role="group" aria-label="{{torrent.quality}}" ng-repeat="torrent in detailCtrl.movie.torrents">
+                        <button type="button" class="btn btn-danger" ng-click="detailCtrl.goMagnet(torrent.hash, movie.title)"><i class="fa fa-magnet"></i></button>
+                        <button class="btn btn-success" ng-click="detailCtrl.goTorrent(torrent.url)"><i class="fa fa-download"></i> {{torrent.quality}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="genre-labels">
+                        <label class="label label-primary" ng-repeat="genre in detailCtrl.movie.genres">{{genre}}</label>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-4 youtube">
+                            <a class="cbox" rel="gal" href="{{detailCtrl.getYtUrl(detailCtrl.yt_trailer_code)}}">
+                                <i class="fa fa-play"></i>
+                                <img ng-src="{{detailCtrl.movie.medium_screenshot_image1}}" class="img-responsive"/>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a class="cbox" rel="gal" href="{{detailCtrl.movie.images.large_screenshot_image2}}">
+                                <img ng-src="{{detailCtrl.movie.medium_screenshot_image2}}" class="img-responsive"/>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a class="cbox" rel="gal" href="{{detailCtrl.movie.images.large_screenshot_image3}}">
+                                <img ng-src="{{detailCtrl.movie.medium_screenshot_image3}}" class="img-responsive"/>
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <h4>
+                        {{detailCtrl.movie.description_full}}
+                    </h4>
+                    <hr>
+                    <h4>{{ 'actors' | translate }}</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="actor in detailCtrl.movie.cast">
+                                <td>
+                                    <img ng-src="{{actor.url_small_image}}" class="img-responsive img-circle" width="50"/>
+                                </td>
+                                <td>
+                                    <h4><a href="javascript:void(0)" ng-click="detailCtrl.searchByName(actor.name)">{{actor.name}}</a></h4>
+                                </td>
+                                <td>
+                                    <h4>{{actor.character_name}}</h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <img ng-src="{{detailCtrl.movie.large_cover_image}}" class="img-responsive img-centered"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

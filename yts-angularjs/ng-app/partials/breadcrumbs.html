@@ -1,0 +1,5 @@
+<ul class="breadcrumb">
+    <li ng-repeat="crumb in breadcrumbCtrl.crumbs" ng-class="{active: $last}">
+        <a href="javascript:void(0)" ng-click="breadcrumbCtrl.goTo(crumb.path)">{{crumb.title| translate}}</a>
+    </li>
+</ul>

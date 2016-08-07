@@ -1,0 +1,62 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ 'search' | translate }}
+        <button ng-if="collapsible" class="btn btn-sm btn-default pull-right" data-toggle="collapse" href="#searchBodyPanel"><i class="fa fa-angle-up"></i></button>
+    </div>
+    <div class="panel-body collapse" ng-class="{'in': !collapsible}" id="searchBodyPanel">
+        <div class="row-fluid">
+            <form class="form-horizontal">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" ng-model="searchCtrl.search.query_term" placeholder="{{ 'term' | translate }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <select class="form-control" ng-model="searchCtrl.search.genre" ng-options="genre as (genre | translate) for genre in searchCtrl.filters.genre">
+                                <option value="" disabled>{{ 'genre' | translate }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <select class="form-control" ng-model="searchCtrl.search.quality" ng-options="quality as (quality | translate) for quality in searchCtrl.filters.quality">
+                                <option value="" disabled>{{ 'quality' | translate }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <select class="form-control" ng-model="searchCtrl.search.sort_by" ng-options="sort as (sort | translate) for sort in searchCtrl.filters.sort">
+                                <option value="" disabled>{{ 'sort' | translate }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <select class="form-control" ng-model="searchCtrl.search.order_by" ng-options="order as (order | translate) for order in searchCtrl.filters.order">
+                                <option value="" disabled>{{ 'order' | translate }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 text-right">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <button type="submit" ng-click="searchCtrl.doSearch()" class="btn btn-primary btn-block">{{'search'| translate}}</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

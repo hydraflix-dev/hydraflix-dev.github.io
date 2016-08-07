@@ -1,0 +1,47 @@
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-12">
+            <search-box collapsible="true"></search-box>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <pagination paginate="listCtrl.results"></pagination>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{'search_results'| translate }} | {{listCtrl.results.movie_count}} {{ 'movies' | translate }}</div>
+                <div class="panel-body">
+                    <div class="row-fluid movie-grid">
+                        <div class="browse-movie-wrap col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center" ng-repeat="movie in listCtrl.results.movies">
+                            <figure>
+                                <img class="img-responsive img-centered" ng-src="{{movie.medium_cover_image}}" alt="{{movie.title}} ({{movie.year}})">
+                                <figcaption>
+                                    <h1><i class="fa fa-star"></i></h1>
+                                    <h4>{{movie.rating}} / 10</h4>
+                                    <hr>
+                                    <h3 ng-repeat="genre in movie.genres">{{genre| translate}}</h3>
+                                    <button type="button" class="btn btn-success" ng-click="listCtrl.goToMovie(movie)">{{ 'go_to_details' |translate}}</button>
+                                </figcaption>
+                            </figure>
+                            <div class="text-left browse-movie-bottom">
+                                <span class="movie-title">{{movie.title}}</span>
+                                <span class="movie-year">{{movie.year}}</span>
+                                <div class="browse-movie-formats">
+                                    <label ng-repeat="format in movie.torrents" class="label label-primary" ng-click="listCtrl.goMagnet(format.hash, movie.title)">{{format.quality}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <pagination paginate="listCtrl.results"></pagination>
+        </div>
+    </div>
+</div>

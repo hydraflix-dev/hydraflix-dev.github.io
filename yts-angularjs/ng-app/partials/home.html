@@ -1,0 +1,25 @@
+<div class="col-lg-12">
+    <!-- Search Panel -->
+    <search-box></search-box>
+
+    <!-- Upcoming Movies -->
+    <div class="panel panel-default" ng-if="homeCtrl.upcomings.length">
+        <div class="panel-heading">{{ 'upcoming_movies' | translate }}</div>
+        <div class="panel-body">
+            <div class="row-fluid movie-grid">
+                <div class="browse-movie-wrap col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center" ng-repeat="upcoming in homeCtrl.upcomings">
+                    <figure>
+                        <img class="img-responsive img-centered" ng-src="{{upcoming.medium_cover_image}}" alt="{{upcoming.title}} ({{upcoming.year}})">
+                        <figcaption>
+                            <button type="button" class="btn btn-warning" ng-click="homeCtrl.toImdb(upcoming.imdb_code)">{{ 'go_to_imdb' |translate}}</button>
+                        </figcaption>
+                    </figure>
+                    <div class="browse-movie-bottom">
+                        <p>{{upcoming.title}}</p>
+                        <label class="label label-primary">{{upcoming.year}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

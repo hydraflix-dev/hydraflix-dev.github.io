@@ -1,0 +1,60 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="javascript:void(0)" ng-click="navbarCtrl.goHomeYoureDrunk()" class="navbar-brand">YTS+AngularJS</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" id="themes">{{ 'language' | translate }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="themes">
+                        <li>
+                            <a href="javascript:void(0)" ng-click="navbarCtrl.setLanguage('en-us')">
+                                <i class="flag flag-us"></i> {{ 'en-us' | translate }}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li ng-repeat="language in navbarCtrl.possibleLanguages">
+                            <a href="javascript:void(0)" ng-click="navbarCtrl.setLanguage(language)">
+                                <i class="flag" ng-class="['flag-' + language.split('-')[1]]"></i> {{ language | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" data-toggle="modal" data-target="#aboutModal">
+                        {{ 'about' | translate }}
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search" ng-submit="navbarCtrl.doSearch()">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="navbarCtrl.searchTerm" placeholder="{{ 'search_movie' | translate }}">
+                </div>
+                <button type="submit" class="btn btn-default">{{'search'| translate }}</button>
+            </form>
+        </div>
+    </div>
+    <!-- The about Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{ 'about' | translate }}</h4>
+                </div>
+                <div class="modal-body">
+                    {{'about_message'| translate}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{'close'| translate }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
