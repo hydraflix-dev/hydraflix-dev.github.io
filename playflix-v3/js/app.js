@@ -1,5 +1,12 @@
-var myApp = angular.module('myApp', ['infinite-scroll']);
-
+var myApp = angular.module('myApp', ['infinite-scroll'])
+.config( [
+    '$compileProvider',
+    function( $compileProvider )
+    {   
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+        // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
+    }
+]);
 myApp.controller('DemoController', function($scope, Playflix) {
   $scope.playflix = new Playflix();
 });
