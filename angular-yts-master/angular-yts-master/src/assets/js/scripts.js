@@ -22700,7 +22700,7 @@ app.controller('MoviesController', [
 
         $scope.getMostDownloadedMovies = function() {
             $http.get(
-                'https://yts.re/api/list.json',
+                'https://yts.ag/api/list.json',
                 {
                     params: {
                         sort: 'downloaded'
@@ -22713,14 +22713,14 @@ app.controller('MoviesController', [
         };
 
         $scope.getLatestMovies = function() {
-            $http.get('https://yts.re/api/list.json')
+            $http.get('https://yts.ag/api/list.json')
             .success(function(data){
                 $scope.latestMovies = data.MovieList;
             });
         };
 
         $scope.getUpcomingMovies = function() {
-            $http.get('https://yts.re/api/upcoming.json')
+            $http.get('https://yts.ag/api/upcoming.json')
             .success(function(data){
                 $scope.upcomingMovies = data;
             });
@@ -22741,7 +22741,7 @@ app.controller('MoviesController', [
             $scope.apiTimeout = $timeout(function(){
 
                 $http.get(
-                    'https://yts.re/api/list.json',
+                    'https://yts.ag/api/list.json',
                     {
                         params: search
                     }
