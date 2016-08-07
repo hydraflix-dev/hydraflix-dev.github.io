@@ -87,7 +87,7 @@
     <div ng-controller='DemoController'>
       <div infinite-scroll='playflix.nextPage()' infinite-scroll-disabled='playflix.busy' infinite-scroll-distance='1000'>
     <div ng-repeat='item in playflix.items' class="movie-box movie-box-'{{item.genre}}' col-lg-2 col-md-3 col-sm-6 col-xs-12 plfx-aux-1">
-    <div class="plfx-aux-2" style="background-image:url({{item.background}});"></div>
+    <div class="plfx-aux-2" style="background-image:url({{item.background_image}});"></div>
     <a href="{{item.magnet}}">
     <img id="img-movie-box-{{item.hash}}" class="hover-luz plfx-aux-3" title="{{item.title}}" alt="{{item.title}}" src="{{item.medium_cover_image}}" onmouseover="hoverHash(&#39;{{item.imdb}}&#39;)" onmouseout="outHash(&#39;{{item.imdb}}&#39;)" onclick="f_play_detalle(&#39;{{item.hash}}&#39;,&#39;{{item.imdb}}&#39;,&#39;{{item.magnet}}&#39;,&#39;{{item.title}}&#39;,&#39;{{item.rating}}&#39;,&#39;{{item.poster}}&#39;,&#39;{{item.genre}}&#39;,&#39;{{item.background}}&#39;,&#39;{{item.api_url}}&#39;,&#39;{{item.provider}}&#39;,&#39;{{item.proxy}}&#39;,&#39;{{item.content_value}}&#39;); scrollDetails(&#39;{{item.hash}}&#39;);"/>
     <div id="movie-rating-star-{{item.imdb}}" class="movie_rating_star"></div></div>
