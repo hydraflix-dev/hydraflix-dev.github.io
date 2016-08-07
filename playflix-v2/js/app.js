@@ -1,19 +1,33 @@
-/*
-var app = angular.module("app", []);
-app.controller("HelloController", function($scope) {
-  $scope.message = "Hello, AngularJS";	
+var myApp = angular.module('myApp', ['infinite-scroll']);
+var page = 1;
+
+myApp.controller('DemoController', function($scope, Reddit) {
+  $scope.reddit = new Reddit();
 });
-*/
 
-var app = angular.module("MyApp", []);
+// Reddit constructor function to encapsulate HTTP and pagination logic
+myApp.factory('Reddit', function($http) {
+  var Reddit = function() {
+    this.items = [];
+    this.busy = false;
+    this.after = '';
+  };
 
-app.controller("PostsCtrl", function($scope, $http) {
-  $http.get('https://yts.ag/api/v2/list_movies.json?&page=1&sort_by=year&quality=720p&limit=24').
-    success(function(data, status, headers, config) {
-    	console.log(data);
-      $scope.posts = data.data.movies;
-    }).
-    error(function(data, status, headers, config) {
-      // log error
-    });
+  Reddit.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+
+    var url = "https://yts.ag/api/v2/list_movies.json?sort_by=year&quality=720p&limit=24&page="+this.after;
+    $http.jsonp(url).success(function(data) {
+      var items = data.data.movies;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i].data);
+      }
+      this.after = page++;
+      console.log(this.after);
+      this.busy = false;
+    }.bind(this));
+  };
+
+  return Reddit;
 });
