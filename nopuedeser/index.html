@@ -5,16 +5,15 @@
 
     <form>
       <label for="torrentId">Download from a magnet link: </label>
-      <input name="torrentId", placeholder="magnet:" value="magnet:?xt=urn:btih:010fa21894c3ce2280ffe6226252c2d60bd9d3fa&dn=Mr.+Robot+-+S02E10+-+720P+-+SweSub.mp4&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Fzer0day.ch%3A1337&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969">
+      <input name="torrentId", placeholder="magnet:" value="magnet:?xt=urn:btih:8b305bce14d94aaac21d7233f03acd4cf435d970&dn=mr.robot.101.hdtv-lol.mp4&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&tr=wss%3A%2F%2Ftracker.webtorrent.io">
       <button type="submit">Download</button>
     </form>
     <h2>Log</h2>
     <div class="log"></div>
 
     <!-- Include the latest version of WebTorrent -->
-    
+
     <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
-    <script src="https://webtorrent.io/bundle.js"></script>
 
     <script>
       var client = new WebTorrent()
