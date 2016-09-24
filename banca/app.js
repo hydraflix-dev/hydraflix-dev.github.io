@@ -316,6 +316,7 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
           throw err
         }
         file.url = url
+        console.log("file.url"+file.url)
         dbg('Done ', file)
       })
     })
