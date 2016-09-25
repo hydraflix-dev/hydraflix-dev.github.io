@@ -333,14 +333,23 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
         var url = window.URL.createObjectURL(new Blob(binaryData, {type: "video/mp4"}))
         */
 
-
+        /*
         var myFile = file
         var url = window.URL.createObjectURL(new Blob(myFile, {type: "video/mp4"}))
         console.log("url.size "+url.size)
         console.log("url.type "+url.type)
         console.log("url "+url)
         $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'.mp4" type="video/mp4"></video>') 
+        */
 
+
+        file.getBlobURL(function (err, url) {
+          var url = window.URL.createObjectURL(new Blob(url, {type: "video/mp4"}))
+          console.log("url.size "+url.size)
+          console.log("url.type "+url.type)          
+          console.log("url "+url)
+          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
+        })
 
         /*
         
