@@ -356,11 +356,6 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
         $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'.mp4" type="video/mp4"></video>') 
         */
 
-        console.log("file.size "+file.size)
-        console.log("file.type "+file.type)
-        console.log("file "+file)
-
-
 
 
 
@@ -369,11 +364,11 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
           //var myUrl = window.URL.createObjectURL(new Blob([url], {type: "video/mp4"}))
 
 
-          var sliceUrl = sliceBlob(url, 0, 2048, "video/mp4")
-          console.log("url.size "+sliceUrl.size)
-          console.log("url.type "+sliceUrl.type)          
-          console.log("url "+sliceUrl)
-          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+sliceUrl+'" type="video/mp4"></video>') 
+          //var sliceUrl = sliceBlob(url, 0, 2048, "video/mp4")
+          console.log("url.size "+url.size)
+          console.log("url.type "+url.type)          
+          console.log("url "+url)
+          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
         })
 
         /*
