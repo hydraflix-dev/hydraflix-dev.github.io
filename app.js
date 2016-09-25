@@ -27,6 +27,20 @@ function blobToFile(theBlob, fileName){
 }
 
 
+function sliceBlob(blob, start, end, type) {
+
+    type = type || blob.type;
+
+    if (blob.mozSlice) {
+        return blob.mozSlice(start, end, type);
+    } else if (blob.webkitSlice) {
+        return blob.webkitSlice(start, end type);
+    } else {
+        throw new Error("This doesn't work!");
+    }
+}
+
+
 debug = window.localStorage.getItem('debug') != null
 
 dbg = function (string, item, color) {
@@ -345,12 +359,21 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
         console.log("file.size "+file.size)
         console.log("file.type "+file.type)
         console.log("file "+file)
+
+
+
+
+
+
         file.getBlobURL(function (err, url) {
           //var myUrl = window.URL.createObjectURL(new Blob([url], {type: "video/mp4"}))
-          console.log("url.size "+url.size)
-          console.log("url.type "+url.type)          
-          console.log("url "+url)
-          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
+
+
+          var sliceUrl = sliceBlob(url, 0, 2048, "video/mp4")
+          console.log("url.size "+sliceUrl.size)
+          console.log("url.type "+sliceUrl.type)          
+          console.log("url "+sliceUrl)
+          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+sliceUrl+'" type="video/mp4"></video>') 
         })
 
         /*
