@@ -1,19 +1,85 @@
-# playflix.github.io
+βTorrent
+========
+**[βTorrent]** is a fully-featured **[WebTorrent]** browser client written in HTML, JS and CSS
 
-Watch movies instantly powered by Hydraflix
+[![Join the chat at https://gitter.im/DiegoRBaquero/BTorrent](https://badges.gitter.im/DiegoRBaquero/BTorrent.svg)](https://gitter.im/DiegoRBaquero/BTorrent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-It works in 4 simple steps:
+### Features
+- [x] Informative GUI with easy sharing options
+- [x] Downloading from an info hash or magnet URI
+- [x] Downloading from a .torrent file (Coming Soon)
+- [x] Seeding files (Single/multiple files)
+- [ ] Seeding CORS-enabled remote files (Coming Soon) 
+- [x] Download/Upload speed per torrent
+- [x] Download/Upload speed of client (All torrents)
+- [x] Removing torrents from the client
+- [x] Pause/Resume torrent
+- [x] Selecting/Deselecting files (Coming Soon)
+- [x] Client Debugging
+- [ ] Use custom trackers/rtcConfig
 
-**Step 1:** Install [this](https://chrome.google.com/webstore/detail/torrent-stream/icocmgpofpimcojhefbcfbdldkmndpgj/) https://chrome.google.com/webstore/detail/torrent-stream/icocmgpofpimcojhefbcfbdldkmndpgj/
+### Built with
+- [WebTorrent]
+- [AngularJS]
+- [Skeleton]
+- [Normalize.css]
+- [Moment.js]
+- [ui-grid]
+- [pretty-bytes]
+- [ng-file-upload]
+- [ng-notify]
 
-**Step 2:** Install [this too!](https://chrome.google.com/webstore/detail/torrentstream-helper/ebaaacomjclfgnkmaeaneljmfgkofphc) https://chrome.google.com/webstore/detail/torrentstream-helper/ebaaacomjclfgnkmaeaneljmfgkofphc
+Website powered by [jsDelivr] and [CloudFlare]. I use [nginx] in my server.
 
-**Step 3:** Visit [http://playflix.github.io](http://playflix.github.io)
+Don't like CloudFlare? No problem! Check [Direct-βTorrent] or [GitHub-βTorrent]
 
-**Step 4:** Right click on your favorite movie and select the "Open with TorrentStream" option.
+### HTML5 serving
+**You must serve index.html as the default**
 
-* **Step 4.1:** ENJOY!
+For nginx, use this conf:
+```
+    location / {
+        try_files $uri$args $uri$args/ /index.html;
+    }
+```
 
-* **Step 4.2:** Appreciate and donate: [1ARqS2EgYprBnNTcaSXf6WdcMMtuSR96E2](bitcoin:1ARqS2EgYprBnNTcaSXf6WdcMMtuSR96E2)
+### Enable Debugging
+Enable βTorrent (Debug logging) and WebTorrent (Logs logging) debug logs by running this in the developer console:
+```js
+localStorage.debug = '*'
+```
+Disable by running this:
+```js
+localStorage.removeItem('debug')
+```
 
-Is secure (the extensions are storaged in Chrome Store), open (hosted and rendered in GitHub), free and without bullshit/garbage/ads.
+### Help βTorrent
+- **[Create a new issue](https://github.com/DiegoRBaquero/bTorrent/issues/new)** to report bugs or suggest new features
+- **[Send a PR](https://github.com/DiegoRBaquero/BTorrent/pull/new/master)** with your changes
+
+### Thanks
+- [jasalo](https://github.com/jasalo) For the logo and favicon
+- [whitef0x0](https://github.com/whitef0x0) For cleanup and ng-file-upload and other ideas
+
+### License
+MIT. Copyright (c) [Diego Rodríguez Baquero](http://diegorbaquero.com)
+
+[βTorrent]: https://btorrent.xyz
+[Direct-βTorrent]: https://direct.btorrent.xyz
+[GitHub-βTorrent]: https://diegorbaquero.github.io/BTorrent/
+[WebTorrent]: https://webtorrent.io
+[AngularJS]: https://angularjs.org/
+[Skeleton]: http://getskeleton.com/
+[Normalize.css]: https://necolas.github.io/normalize.css/
+[Moment.js]: http://momentjs.com/
+[ui-grid]: http://ui-grid.info/
+[pretty-bytes]: https://github.com/sindresorhus/pretty-bytes
+[ng-file-upload]: https://github.com/danialfarid/ng-file-upload
+[ng-notify]: https://github.com/matowens/ng-notify
+[Jade]: http://jade-lang.com/
+[CoffeeScript]: http://coffeescript.org/
+[Sass]: http://sass-lang.com/
+[Harp]: http://harpjs.com/
+[jsDelivr]: https://www.jsdelivr.com/
+[CloudFlare]: https://www.cloudflare.com/
+[nginx]: http://nginx.org/

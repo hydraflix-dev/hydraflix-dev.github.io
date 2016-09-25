@@ -1,78 +1,42 @@
 <!DOCTYPE html>
-<html ng-app="playflix">
-	<!--HEAD-->
-	<head>
-		<title>Playflix | Watch movies instantly</title>
-		<!--META-->
-		<meta name="theme-color" content="#013BA6">
-		<meta property="og:title" content="Playflix" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://playflix.github.io" />
-		<meta property="og:image" content="image/tX1x8uP.jpg" />		
-		<meta property="og:description" content="Watch movies instantly" />
-		<link rel="apple-touch-icon" sizes="57x57" href="image/ico/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="image/ico/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="image/ico/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="image/ico/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="image/ico/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="image/ico/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="image/ico/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="image/ico/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="image/ico/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="image/ico/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="image/ico/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="image/ico/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="image/ico/favicon-16x16.png">
-		<link rel="manifest" href="image/ico/manifest.json">
-		<!--
-		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/icocmgpofpimcojhefbcfbdldkmndpgj">
-		https://developer.chrome.com/webstore/inline_installation
-		-->
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="image/ico/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">		
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--/META-->
-		<!--CSS-->
-		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-		<link rel="stylesheet" href="css/playflix.css" type="text/css">
-		<link rel="stylesheet" href="css/material/bootstrap-material-design.css" type="text/css">
-		<link rel="stylesheet" href="css/material/ripples.min.css" type="text/css">
-		<link rel="stylesheet" href="css/material/navbar-material.css" type="text/css">		
-		<link rel="stylesheet" href="css/font-awesome.min.css"  type="text/css">
-		<link rel="stylesheet" href="css/fonts.css" type="text/css">
-		<link rel="stylesheet/less" href="css/landing.less" type="text/css">
-		<link rel="stylesheet/sass" href="css/landing.scss" type="text/css">
-		<link rel="stylesheet" href="css/cssgram.css"  type="text/css">		
-		<link rel="stylesheet" href="css/animate.min.css"  type="text/css">
-		<link rel="stylesheet" href="css/morphext.css"  type="text/css">
-		<!--/CSS-->
-		<!--JS-->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/less.min.js"></script>
-		<script type="text/javascript" src="js/landing.js"></script>
-		<script type="text/javascript" src="js/sass.js"></script>
-		<script type="text/javascript" src="js/morphext.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script type="text/javascript" src="js/controllers.js"></script>
-		<!--/JS-->			
-	</head>
-	<!--HEAD-->
-	<body>
-		<!--NAVBAR-->
-		<div ng-include="'inc/navbar.html'"></div>
-		<!--NAVBAR-->	
-		<!--PRELOADER-->
-		<div ng-include="'inc/preloader.html'"></div>
-		<!--/PRELOADER-->
-		<!--CATALOGUE-->
-		<div ng-include="'inc/catalogue.html'"></div>
-		<!--/CATALOGUE-->
-		<!--DETAILS SECTION-->
-		<div ng-include="'inc/detail.html'"></div>
-		<!--/DETAILS SECTION-->
-		<!--JS-->
-		<div ng-include="'inc/js.html'"></div>
-		<!--/JS-->
-	</body>
+<html ng-app="BTorrent" lang="en">
+  <head>
+    <base href="">
+    <meta charset="UTF-8">
+    <title>βTorrent: Browser WebTorrent Client</title>
+    <meta name="description" content="βTorrent is the first fully-featured Browser WebTorrent Client">
+    <meta name="keywords" content="βTorrent, btorrent, client, webtorrent, browser, torrent, stream, bittorrent, torrenting, sharing, filesharing">
+    <meta name="author" content="Diego Rodríguez Baquero - DiegoRBaquero">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/g/webtorrent@0,momentjs@2,angularjs@1.5(angular.min.js+angular-route.min.js+angular-sanitize.min.js),angular.ui-grid@3.1,angular.ng-notify@0.8,angular.file-upload@12"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/g/normalize@3.0,skeleton@2.0,angular.ng-notify@0.8(ng-notify.min.css)">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.6/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/angular.ui-grid/3.1/ui-grid.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="http://vjs.zencdn.net/5.11.6/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>    
+  </head>
+  <body ng-controller="BTorrentCtrl" ng-cloak="">
+    <header>
+      <h1>βTorrent<span class="version"> v{{$root.version}}</span></h1>
+      <div class="views" ng-show="$root.client.torrents.length == 0"><a ng-href="/#">Full</a> | <a ng-href="/download">Single Download</a> | <a ng-href="/view">Stream / View</a></div>
+    </header>
+    <div id="viewer" ng-style="$root.viewerStyle"></div>
+    <div id="view" ng-view></div>
+    <div id="banca"></div>
+    <footer>
+        <a class="button" href="https://github.com/DiegoRBaquero/BTorrent/issues" target="_blank"><i class="fa fa-github"></i> Suggest a feature / Report a bug <i class="fa fa-comment"></i></a><br>
+        <b>βTorrent is an Open-Source project by <a href="https://diegorbaquero.com" target="_blank">DiegoRBaquero</a></b><br>
+        <b> <a href="https://tracker.btorrent.xyz/stats" target="_blank">βTorrent's Tracker Stats</a></b><br>
+        Powered by <a href="https://github.com/feross/webtorrent" target="_blank">WebTorrent</a><br>
+        <small>Hosted by <a href="https://m.do.co/c/0b25a910e6e4" target="_blank">Digital Ocean</a></small>
+    </footer>
+    <div class="spinner" ng-show="client.processing"><i class="fa fa-spinner fa-spin spinner-icon"></i></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+     
+    <script src="app.js"></script>
+      <script src="http://vjs.zencdn.net/5.11.6/video.js"></script>
+  </body>
 </html>
