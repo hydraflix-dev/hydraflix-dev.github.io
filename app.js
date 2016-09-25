@@ -344,11 +344,11 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
 
 
         file.getBlobURL(function (err, url) {
-          var myUrl = window.URL.createObjectURL(new Blob([url], {type: "video/mp4"}))
-          console.log("myUrl.size "+myUrl.size)
-          console.log("myUrl.type "+myUrl.type)          
-          console.log("myUrl "+url)
-          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+myUrl+'" type="video/mp4"></video>') 
+          //var myUrl = window.URL.createObjectURL(new Blob([url], {type: "video/mp4"}))
+          console.log("url.size "+url.size)
+          console.log("url.type "+url.type)          
+          console.log("url "+url)
+          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
         })
 
         /*
