@@ -34,7 +34,7 @@ function sliceBlob(blob, start, end, type) {
     if (blob.mozSlice) {
         return blob.mozSlice(start, end, type);
     } else if (blob.webkitSlice) {
-        return blob.webkitSlice(start, end type);
+        return blob.webkitSlice(start, end, type);
     } else {
         throw new Error("This doesn't work!");
     }
