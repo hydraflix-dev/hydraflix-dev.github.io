@@ -19,6 +19,14 @@ rtcConfig = {
   ]
 }
 
+function blobToFile(theBlob, fileName){
+    //A Blob() is almost a File() - it's just missing the two properties below which we will add
+    theBlob.lastModifiedDate = new Date();
+    theBlob.name = fileName;
+    return theBlob;
+}
+
+
 debug = window.localStorage.getItem('debug') != null
 
 dbg = function (string, item, color) {
@@ -142,6 +150,7 @@ app.controller('BTorrentCtrl', ['$scope', '$rootScope', '$http', '$log', '$locat
   $rootScope.onTorrent = function (torrent, isSeed) {
     dbg(torrent.magnetURI)
     torrent.safeTorrentFileURL = torrent.torrentFileBlobURL
+    console.log("torrent.torrentFileBlobURL"+torrent.torrentFileBlobURL)
     torrent.fileName = `${torrent.name}.torrent`
     if (!isSeed) {
       dbg('Received metadata', torrent)
@@ -164,6 +173,8 @@ app.controller('BTorrentCtrl', ['$scope', '$rootScope', '$http', '$log', '$locat
           $rootScope.client.processing = false
         }
         file.url = url
+                $("#viewer").append('<video id="my-video" class="video-js" controls preload="metadata" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}"><source id="my-video-source" src="'+file.url+'" type="video/mp4"></video>')
+
         if (!isSeed) {
           dbg('Done ', file)
           ngNotify.set(`<b>${file.name}</b> ready for download`, 'success')
@@ -310,6 +321,46 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
     dbg('Received metadata', torrent)
     ngNotify.set(`Received ${torrent.name} metadata`)
     torrent.files.forEach(function (file) {
+        /*console.log("file" +file);
+        blob = new Blob([file], {type: "video/mp4"}),
+        console.log("blob" +blob);
+        url = window.URL.createObjectURL(file);
+        console.log("url" +url);
+        */
+        /*var binaryData = [];
+        binaryData.push(file);
+        console.log("binaryData "+binaryData)
+        var url = window.URL.createObjectURL(new Blob(binaryData, {type: "video/mp4"}))
+        */
+
+
+
+        var url = window.URL.createObjectURL(new Blob(file, {type: "video/mp4"}))
+        console.log("url "+url)
+        $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
+
+
+        /*
+        
+        ESTO ROMPE EL CHROME.... TAL VEZ SEA EXACTAMENTE LO QUE BUSCAMOS
+
+        var url = window.URL.createObjectURL(new Blob(file, {type: "video/mp4"}))
+        console.log("url "+url)
+        $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
+        */
+
+        /*
+        
+        ESTO FUNCIONA DELICIOSAMENTE BIEN, PERO SOLO CUANDO EL DOWNLOAD HA SIDO COMPLETO
+
+        file.getBlobURL(function (err, url) {
+          console.log("url "+url)
+          $("#banca").append('<video controls autoplay width="640" height="264"><source id="my-video-source" src="'+url+'" type="video/mp4"></video>') 
+        })
+        */
+              
+
+        /*
       file.appendTo('#viewer')
       file.getBlobURL(function (err, url) {
         if (err) {
@@ -317,13 +368,18 @@ app.controller('ViewCtrl', ['$scope', '$rootScope', '$http', '$log', '$location'
         }
         file.url = url
         console.log("file.url"+file.url)
-        dbg('Done ', file)
+
+
+
+        //dbg('Done ', file)
       })
+      */
     })
     torrent.on('done', dbg('Done', torrent))
     torrent.on('wire', function (wire, addr) { dbg(`Wire ${addr}`, torrent) })
     torrent.on('error', er)
   }
+
   $scope.addMagnet = function () {
     $rootScope.addMagnet($scope.torrentInput, onTorrent)
     $scope.torrentInput = ''
